@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gilberto Diamond</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static  'default.css' %}">
+	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+
+	<section class="s1">
+		<div class="main-container">
+			<div class="greeting-wrapper">
+			   <img src= "{% static 'images/logo.png' %}" style="width:120px;margin-top:20px">
+				<h3>Nwabueze Gilbert(Gilish -Tech /Senior Web  Developer)</h3>
+			</div>
+
+
+			<div class="intro-wrapper">
+				<div class="nav-wrapper">
+
+					<!-- Link around dots-wrapper added after tutorial video -->
+					<a href="index.html">
+						<div class="dots-wrapper">
+							<div id="dot-1" class="browser-dot"></div>
+							<div id="dot-2" class="browser-dot"></div>
+							<div id="dot-3" class="browser-dot"></div>
+						</div>
+					</a>
+					
+
+					<ul id="navigation">
+						<li><a href="{% url 'home' %}#contact">Contact</a></li>
+
+					</ul>
+				</div>
+
+				<div class="left-column">
+					<img id="profile_pic" src="{% static  'images/Gilberto.JPG' %}" onclick="solve()">
+					<h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
+
+					<div id="theme-options-wrapper">
+						<div data-mode="light" id="light-mode" class="theme-dot"></div>
+						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+						<div data-mode="green" id="green-mode" class="theme-dot"></div>
+						<div data-mode="red" id="red-mode" class="theme-dot"></div>
+						
+					</div>
+					<div id="theme-options-wrapper">
+						<div data-mode="black" id="black-mode" class="theme-dot"></div>
+						<div data-mode="lemon" id="lemon-mode" class="theme-dot"></div>
+						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+						
+						<div data-mode="grey" id="grey-mode" class="theme-dot"></div>
+					</div>
+
+					<p id="settings-note">*Choose Your Favorite Color<br>Forever Changed</p>
+				</div>
+
+				<div class="right-column">
+
+					<div id="preview-shadow">
+						<div id="preview">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<h3>{% block facto %} What I Do {% endblock  %}</h3>
+							<p>{% block fact %} I was a local tutor.. But now i am a freelancer {% endblock %}</p>
+							<div id="corner-br" class="corner"></div>
+							<div id="corner-bl" class="corner"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+          {% block content %}
+
+          {% endblock %}
+
+
+
+
+    <section class="s2">
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;">Get In Touch</h3>
+
+			<form id="contact-form" action="{% url 'home' %}" method="POST">
+                {% csrf_token %}
+				<a name="contact"></a>
+
+				<label>Name</label>
+				<input class="input-field" type="text" name="name"  required>
+
+				<label>Subject</label>
+				<input class="input-field" type="text" name="subject"  required >
+
+				<label>Email</label>
+				<input class="input-field" type="text" name="email" required>
+
+				<label>Message</label>
+				<textarea class="input-field" name="message" required></textarea>
+
+				<input id="submit-btn" type="submit" value="Send">
+			</form>
+            <p> Messages Sent are saved on my Database(Postgresql)
+			<a  href="{% url 'comment' %}#msg"><p style="text-align:center"> Click to View All Message Sent</p></a>
+            <hr>
+            <p><strong>Built with Django,html,css, Gilish-Tech<strong></p>
+		</div>
+
+	</section> 
+
+	<script type="text/javascript" src="{% static 'script.js' %}"></script>
+</body>
+
+<script>
+
+    function solve (){
+
+        window.location.replace("/")
+        console.log("wow")
+
+        
+    }
+    
+</script
+</html>
+

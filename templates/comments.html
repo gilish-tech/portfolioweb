@@ -1,0 +1,29 @@
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<h3>{% block facto %} My awesome Messages{% endblock  %}</h3>
+
+
+{% block fact %} Messages sent and stored in my database {% endblock %}
+{% block content%}
+
+<section class="s2">
+
+    <h1 style="text-align:center"  id="msg">Message</h1>
+
+    {% for message in messages%}
+    <h3 style="text-align:center">{{ message.subject }}</h3>
+    <p  style="text-align:center">{{ message.message }} <span style="font-size:10px">by {{ message.name}}</span></p> 
+
+        <hr>
+    {% endfor %}
+
+
+</section>
+
+{% endblock %}
