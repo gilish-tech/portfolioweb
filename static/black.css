@@ -13,7 +13,17 @@
 	--previewShadow:#111921;
 
 
-	--buttonColor:#000000;
+	--buttonColor:#fff;
 
 
+}
+
+
+#submit-btn{
+	color: #000000
+}
+
+#submit-btn:hover{
+	background-color: black;
+	color: #fff;
 }
